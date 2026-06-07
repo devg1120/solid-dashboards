@@ -2,7 +2,7 @@ import { openSidebar } from "./store";
 
 export function TopBar() {
   return (
-    <header class="relative z-10 h-16 items-center bg-white shadow md:h-20">
+    <header class="relative z-10 h-15 items-center bg-white shadow md:h-18">
       <div class="relative z-10 mx-auto flex h-full flex-col justify-center px-3 text-white">
         <div class="relative flex w-full items-center pl-1 sm:ml-0 sm:pr-2">
           <div class="group relative flex h-full w-12 items-center">

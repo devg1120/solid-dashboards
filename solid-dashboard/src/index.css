@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ── Kobalte component overrides ── */
+
+/* Tooltip */
+.kb-tooltip-content {
+  @apply bg-gray-900 text-white text-xs rounded-lg px-3 py-1.5 shadow-lg;
+  animation: fadeIn 150ms ease-out;
+}
+
+/* Progress bar */
+.progress-track {
+  @apply w-full h-2 rounded-full bg-gray-200;
+}
+
+.progress-fill {
+  @apply h-full rounded-full transition-all duration-300 ease-linear;
+  width: var(--kb-progress-fill-width);
+}
+
+/* Tabs */
+.kb-tabs-list {
+  @apply flex border-b border-gray-200;
+}
+
+.kb-tabs-trigger {
+  @apply px-4 py-2 text-sm font-medium text-gray-500 border-b-2 border-transparent
+    hover:text-gray-700 hover:border-gray-300 transition-colors cursor-pointer;
+}
+
+.kb-tabs-trigger[data-selected] {
+  @apply text-indigo-600 border-indigo-600;
+}
+
+.kb-tabs-content {
+  @apply pt-4;
+}
+
+/* Separator */
+.kb-separator {
+  @apply border-0 bg-gray-200;
+}
+
+.kb-separator[data-orientation="horizontal"] {
+  @apply h-px w-full my-4;
+}
+
+.kb-separator[data-orientation="vertical"] {
+  @apply w-px h-full mx-4;
+}
+
+/* ── Dark mode overrides ── */
+/* Applied via ancestor .dark-mode class — Solid toggles this on the root <div> */
+
+.dark-mode .bg-white {
+  background-color: var(--color-gray-900) !important;
+  border-color: var(--color-gray-700) !important;
+}
+
+.dark-mode .text-gray-900 {
+  color: var(--color-gray-100) !important;
+}
+
+.dark-mode .text-gray-500 {
+  color: var(--color-gray-400) !important;
+}
+
+.dark-mode .text-gray-400 {
+  color: var(--color-gray-500) !important;
+}
+
+.dark-mode .border-gray-100 {
+  border-color: var(--color-gray-700) !important;
+}
+
+.dark-mode .border-gray-200 {
+  border-color: var(--color-gray-700) !important;
+}
+
+.dark-mode .bg-gray-100 {
+  background-color: var(--color-gray-800) !important;
+}
+
+.dark-mode .bg-gray-50 {
+  background-color: var(--color-gray-950) !important;
+}
+
+.dark-mode .hover\:bg-gray-50:hover {
+  background-color: var(--color-gray-800) !important;
+}
+
+.dark-mode input {
+  background-color: var(--color-gray-800) !important;
+  border-color: var(--color-gray-600) !important;
+  color: var(--color-gray-100) !important;
+}
+
+.dark-mode .progress-track {
+  background-color: var(--color-gray-700) !important;
+}
+
+.dark-mode .kb-separator {
+  background-color: var(--color-gray-700) !important;
+}
+
+.dark-mode .kb-tabs-trigger {
+  color: var(--color-gray-400);
+}
+
+.dark-mode .kb-tabs-trigger:hover {
+  color: var(--color-gray-200);
+  border-color: var(--color-gray-500);
+}
+
+.dark-mode .kb-tabs-list {
+  border-color: var(--color-gray-700);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -3,6 +3,8 @@ import { render } from "solid-js/web";
 import { Router, useRoutes } from "@solidjs/router";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+
+// https://github.com/hannoeru/vite-plugin-pages
 import routes from "~solid-pages";
 import "tailwindcss/tailwind.css";
 import { DashboardLayout } from "./dashboard/Layout";
@@ -14,6 +16,8 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?"
   );
 }
+
+console.log(routes);
 
 render(() => {
   const Routes = useRoutes(routes);
