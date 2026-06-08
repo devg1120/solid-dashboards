@@ -9,7 +9,7 @@ function MainLayout({ children }: JSX.HTMLAttributes<HTMLElement>) {
   return (
     <div class="flex h-screen overflow-hidden">
       {/* Sidebar */}
-      <Siderbar />
+      <Siderbar  />
       <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
         {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <div

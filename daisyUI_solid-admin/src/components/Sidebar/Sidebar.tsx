@@ -41,9 +41,12 @@ function Sidebar(_props: JSX.HTMLAttributes<HTMLElement>) {
         );
       }
     };
+/*
+    <aside class="transition-all duration-900 sidebar fixed left-0 top-0 z-9999 flex h-screen w-[290px] flex-col overflow-y-hidden bg-base-100 border-r border-base-content/20 px-5 lg:static lg:translate-x-0 sidebar-full:max-lg:-translate-x-full sidebar-mini:translate-x-0 sidebar-mini:lg:w-[90px]">
 
+*/
   return (
-    <aside class="sidebar fixed left-0 top-0 z-9999 flex h-screen w-[290px] flex-col overflow-y-hidden bg-base-100 border-r border-base-content/20 px-5 lg:static lg:translate-x-0 sidebar-full:max-lg:-translate-x-full sidebar-mini:translate-x-0 sidebar-mini:lg:w-[90px]">
+    <aside class="transition-all  duration-900 sidebar fixed left-0 top-0 z-9999 flex h-screen w-[290px] flex-col overflow-y-hidden bg-base-100 border-r border-base-content/20 px-5 lg:static lg:translate-x-0 sidebar-full:max-lg:-translate-x-full sidebar-mini:translate-x-0 sidebar-mini:lg:w-[90px]">
       {/* Header */}
       <div class="flex items-center gap-2 pt-8 sidebar-header pb-7 sidebar-full:justify-between sidebar-mini:justify-center">
         <a href="index.html">
