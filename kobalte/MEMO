@@ -1,0 +1,15 @@
+pnpm -i
+
+npm run build
+
+npm run dev:docs
+
+----------------------------------------
+#  OR
+
+cd apps/docs
+pnpm i
+pnpm run build
+pnpm run  dev
+
+
