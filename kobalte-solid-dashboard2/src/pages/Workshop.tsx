@@ -19,6 +19,7 @@ import { Portal, Dynamic } from "solid-js/web";
 import { Collapsible } from "@kobalte/core/collapsible";
 
 import { Menubar } from "@kobalte/core/menubar";
+import { Demo_Collapsible } from "./lib/Demo_Collapsible";
 
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "./icons";
 
@@ -781,7 +782,10 @@ export default function Workshop() {
           Interactive concept explorer — each section is a self-contained lesson.
         </p>
       </div>
+      <h3>Menubar</h3>
       <TestMenu />
+      <h3>Collapsible</h3>
+      <Demo_Collapsible />
       <WorkshopSection
         number={1}
         title="Memos & Derivations"
