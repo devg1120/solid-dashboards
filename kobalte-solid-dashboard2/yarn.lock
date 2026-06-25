@@ -1145,6 +1145,11 @@ seroval@~1.5.0:
   resolved "https://registry.yarnpkg.com/seroval/-/seroval-1.5.4.tgz#9d0cedae244f8213bbbbbcc99c497eb7c945d961"
   integrity sha512-46uFvgrXTVxZcUorgSSRZ4y+ieqLLQRMlG4bnCZKW3qI6BZm7Rg4ntMW4p1mILEEBZWrFlcpp0AyIIlM6jD9iw==
 
+solid-icons@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/solid-icons/-/solid-icons-1.2.0.tgz#6b277c8fbfa05d5fe67c9d7c84d6b9a05a323db9"
+  integrity sha512-yjQxWQMi9l19P5Af9vjsvalTMDFPDL4XD6etrUdNxNVhFp1bMYF0SFwUa5VYDfJ7u0SF3Qkz/F7BZxqcLUwklw==
+
 solid-js@^1.9.5:
   version "1.9.13"
   resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.9.13.tgz#11da289c3c43ab29f1154632002913cce895fb8e"
