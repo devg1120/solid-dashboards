@@ -18,200 +18,16 @@ import {
 import { Portal, Dynamic } from "solid-js/web";
 import { Collapsible } from "@kobalte/core/collapsible";
 
-import { Menubar } from "@kobalte/core/menubar";
-import { Demo_Collapsible } from "./lib/Demo_Collapsible";
 
-import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "./icons";
+import { Select as Select_Demo} from "../components/kobalte/Select";
+import { Menubar as Menubar_Demo} from "../components/kobalte/Menubar";
+import { Collapsible as Collapsible_Demo} from "../components/kobalte/Collapsible";
+import { NavigationMenu as NavigationMenu_Demo} from "../components/kobalte/NavigationMenu";
+import { Accordion as Accordion_Demo} from "../components/kobalte/Accordion";
+import { DropdownMenu as DropdownMenu_Demo} from "../components/kobalte/DropdownMenu";
+import { NumberField as NumberField_Demo} from "../components/kobalte/NumberField";
 
-import "./style.css";
 
-
-function TestMenu() {
-  const [showGitLog, setShowGitLog] = createSignal(true);
-  const [showHistory, setShowHistory] = createSignal(false);
-  const [branch, setBranch] = createSignal("main");
-  return (
-      <Menubar class="menubar__root">
-        <Menubar.Menu>
-          <Menubar.Trigger class="menubar__trigger">
-            Git
-          </Menubar.Trigger>
-          <Menubar.Portal>
-            <Menubar.Content class="menubar__content">
-              <Menubar.Item class="menubar__item">
-                Commit <div class="menubar__item-right-slot">⌘+K</div>
-              </Menubar.Item>
-              <Menubar.Item class="menubar__item">
-                Push <div class="menubar__item-right-slot">⇧+⌘+K</div>
-              </Menubar.Item>
-              <Menubar.Item class="menubar__item" disabled>
-                Update Project <div class="menubar__item-right-slot">⌘+T</div>
-              </Menubar.Item>
-              <Menubar.Sub overlap gutter={4} shift={-8}>
-                <Menubar.SubTrigger class="menubar__sub-trigger">
-                  GitHub
-                  <div class="menubar__item-right-slot">
-                    <ChevronRightIcon width={20} height={20} />
-                  </div>
-                </Menubar.SubTrigger>
-                <Menubar.Portal>
-                  <Menubar.SubContent class="menubar__sub-content">
-                    <Menubar.Item class="menubar__item">
-                      Create Pull Request…
-                    </Menubar.Item>
-                    <Menubar.Item class="menubar__item">
-                      View Pull Requests
-                    </Menubar.Item>
-                    <Menubar.Item class="menubar__item">Sync Fork</Menubar.Item>
-                    <Menubar.Separator class="menubar__separator" />
-                    <Menubar.Item class="menubar__item">
-                      Open on GitHub
-                    </Menubar.Item>
-                  </Menubar.SubContent>
-                </Menubar.Portal>
-              </Menubar.Sub>
-              <Menubar.Separator class="menubar__separator" />
-              <Menubar.CheckboxItem
-              class="menubar__checkbox-item"
-              checked={showGitLog()}
-              onChange={setShowGitLog}
-              >
-              <Menubar.ItemIndicator class="menubar__item-indicator">
-                <CheckIcon />
-              </Menubar.ItemIndicator>
-              Show Git Log
-            </Menubar.CheckboxItem>
-            <Menubar.CheckboxItem
-            class="menubar__checkbox-item"
-            checked={showHistory()}
-            onChange={setShowHistory}
-            >
-            <Menubar.ItemIndicator class="menubar__item-indicator">
-              <CheckIcon />
-            </Menubar.ItemIndicator>
-            Show History
-          </Menubar.CheckboxItem>
-          <Menubar.Separator class="menubar__separator" />
-          <Menubar.Group>
-            <Menubar.GroupLabel class="menubar__group-label">
-              Branches
-            </Menubar.GroupLabel>
-            <Menubar.RadioGroup value={branch()} onChange={setBranch}>
-              <Menubar.RadioItem class="menubar__radio-item" value="main">
-                <Menubar.ItemIndicator class="menubar__item-indicator">
-                  <DotFilledIcon />
-                </Menubar.ItemIndicator>
-                main
-              </Menubar.RadioItem>
-              <Menubar.RadioItem class="menubar__radio-item" value="develop">
-                <Menubar.ItemIndicator class="menubar__item-indicator">
-                  <DotFilledIcon />
-                </Menubar.ItemIndicator>
-                develop
-              </Menubar.RadioItem>
-            </Menubar.RadioGroup>
-          </Menubar.Group>
-        </Menubar.Content>
-      </Menubar.Portal>
-    </Menubar.Menu>
-    <Menubar.Menu>
-      <Menubar.Trigger class="menubar__trigger">
-        File
-      </Menubar.Trigger>
-      <Menubar.Portal>
-        <Menubar.Content class="menubar__content">
-          <Menubar.Item class="menubar__item">
-            New Tab <div class="menubar__item-right-slot">⌘+T</div>
-          </Menubar.Item>
-          <Menubar.Item class="menubar__item">
-            New Window <div class="menubar__item-right-slot">⌘+N</div>
-          </Menubar.Item>
-          <Menubar.Item class="menubar__item" disabled>
-            New Incognito Window
-          </Menubar.Item>
-          <Menubar.Separator class="menubar__separator"/>
-          <Menubar.Sub overlap gutter={4} shift={-8}>
-            <Menubar.SubTrigger class="menubar__sub-trigger">
-              Share
-              <div class="menubar__item-right-slot">
-                <ChevronRightIcon width={20} height={20} />
-              </div>
-            </Menubar.SubTrigger>
-            <Menubar.Portal>
-              <Menubar.SubContent class="menubar__sub-content">
-                <Menubar.Item class="menubar__item">
-                  Email Link
-                </Menubar.Item>
-                <Menubar.Item class="menubar__item">
-                  Messages
-                </Menubar.Item>
-                <Menubar.Item class="menubar__item">
-                  Notes
-                </Menubar.Item>
-              </Menubar.SubContent>
-            </Menubar.Portal>
-          </Menubar.Sub>
-          <Menubar.Separator class="menubar__separator" />
-          <Menubar.Item class="menubar__item">
-            Print... <div class="menubar__item-right-slot">⌘+P</div>
-          </Menubar.Item>
-        </Menubar.Content>
-      </Menubar.Portal>
-    </Menubar.Menu>
-    <Menubar.Menu>
-      <Menubar.Trigger class="menubar__trigger">
-        Edit
-      </Menubar.Trigger>
-      <Menubar.Portal>
-        <Menubar.Content class="menubar__content">
-          <Menubar.Item class="menubar__item">
-            Undo <div class="menubar__item-right-slot">⌘+Z</div>
-          </Menubar.Item>
-          <Menubar.Item class="menubar__item">
-            Redo <div class="menubar__item-right-slot">⇧+⌘+Z</div>
-          </Menubar.Item>
-          <Menubar.Separator class="menubar__separator"/>
-          <Menubar.Sub overlap gutter={4} shift={-8}>
-            <Menubar.SubTrigger class="menubar__sub-trigger">
-              Find
-              <div class="menubar__item-right-slot">
-                <ChevronRightIcon width={20} height={20} />
-              </div>
-            </Menubar.SubTrigger>
-            <Menubar.Portal>
-              <Menubar.SubContent class="menubar__sub-content">
-                <Menubar.Item class="menubar__item">
-                  Search The Web
-                </Menubar.Item>
-                <Menubar.Separator class="menubar__separator"/>
-                <Menubar.Item class="menubar__item">
-                  Find...
-                </Menubar.Item>
-                <Menubar.Item class="menubar__item">
-                  Find Next
-                </Menubar.Item>
-                <Menubar.Item class="menubar__item">
-                  Find Previous
-                </Menubar.Item>
-              </Menubar.SubContent>
-            </Menubar.Portal>
-          </Menubar.Sub>
-          <Menubar.Separator class="menubar__separator" />
-          <Menubar.Item class="menubar__item">
-            Cut
-          </Menubar.Item>
-          <Menubar.Item class="menubar__item">
-            Copy
-          </Menubar.Item>
-          <Menubar.Item class="menubar__item">
-            Paste
-          </Menubar.Item>
-        </Menubar.Content>
-      </Menubar.Portal>
-    </Menubar.Menu>
-  </Menubar>
-  );
-}
 
 interface WorkshopSectionProps {
   number: number;
@@ -782,10 +598,24 @@ export default function Workshop() {
           Interactive concept explorer — each section is a self-contained lesson.
         </p>
       </div>
-      <h3>Menubar</h3>
-      <TestMenu />
-      <h3>Collapsible</h3>
-      <Demo_Collapsible />
+
+      <hr/>
+      <h2>Select</h2>
+        <Select_Demo />
+      <h2>Menubar</h2>
+        <Menubar_Demo />
+      <h2>Collapsible</h2>
+        <Collapsible_Demo />
+      <h2>NavigationMenu</h2>
+        <NavigationMenu_Demo />
+      <h2>Accordion</h2>
+        <Accordion_Demo />
+      <h2>DropdownMenu</h2>
+        <DropdownMenu_Demo />
+      <h2>NumberField</h2>
+        <NumberField_Demo />
+      <hr/>
+
       <WorkshopSection
         number={1}
         title="Memos & Derivations"
